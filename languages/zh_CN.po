@@ -1,0 +1,443 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: CCCA\n"
+"Language: zh-CN\n"
+
+#: author.php:43 loop.php:23 single.php:36
+msgid "% Comments"
+msgstr "% 条评论"
+
+#: search.php:7
+msgid "%s Search Results for "
+msgstr "%s 条搜索结果␣"
+
+#: author.php:43 loop.php:23 single.php:36
+msgid "1 Comment"
+msgstr "1条评论"
+
+#: author.php:15
+msgid "About "
+msgstr "关于 "
+
+#: functions.php:445
+msgid "Add New"
+msgstr "新添加"
+
+#: archive.php:7
+msgid "Archives"
+msgstr "归档"
+
+#: author.php:9
+msgid "Author Archives for "
+msgstr "归档，作者"
+
+#: single.php:41
+msgid "Categorised in: "
+msgstr "分类："
+
+#: comments.php:18
+msgid "Comments are closed here."
+msgstr "评论已关闭。"
+
+#: functions.php:215 functions.php:226
+msgid "Description for this widget-area..."
+msgstr "此小工具区域的描述…"
+
+#: functions.php:447
+msgid "Edit"
+msgstr "编辑"
+
+#: functions.php:165
+msgid "Header Menu"
+msgstr "主菜单"
+
+#: index.php:7
+msgid "Latest Posts"
+msgstr "最新文章"
+
+#: author.php:43 loop.php:23 single.php:36
+msgid "Leave your thoughts"
+msgstr "留下你的想法"
+
+#: 404.php:10
+msgid "Page not found"
+msgstr "页面不存在"
+
+#: comments.php:3
+msgid "Post is password protected. Enter the password to view any comments."
+msgstr "文章被密码保护。输入密码查看评论。"
+
+#: author.php:42 loop.php:22 single.php:35
+msgid "Published by"
+msgstr "发表人"
+
+#: 404.php:12
+msgid "Return home?"
+msgstr "返回主页？"
+
+#: searchform.php:4
+msgid "Search"
+msgstr "搜索"
+
+#: functions.php:167
+msgid "Sidebar Menu"
+msgstr "侧边栏菜单"
+
+#: author.php:62 page.php:32 loop.php:39 template-demo.php:32
+#: template-with-sidebar.php:41 single.php:56 template-no-sidebar.php:42
+#: front-page.php:20 single-post.php:44
+msgid "Sorry, nothing to display."
+msgstr "抱歉，没有可显示内容。"
+
+#: tag.php:7
+msgid "Tag Archive: "
+msgstr "标签归档："
+
+#: single.php:40
+msgid "Tags: "
+msgstr "标签："
+
+#: single.php:42
+msgid "This post was written by "
+msgstr "本文作者为"
+
+#: searchform.php:3
+msgid "To search, type and hit enter."
+msgstr "输入之后按回车开始搜索。"
+
+#: functions.php:291
+msgid "View Article"
+msgstr "查看文章"
+
+#: functions.php:214
+msgid "Widget Area 1"
+msgstr "小工具区域1"
+
+#: functions.php:225
+msgid "Widget Area 2"
+msgstr "小工具区域2"
+
+#: ../category.php:6
+msgid "Categories for"
+msgstr "类别"
+
+#: ../footer.php:6
+msgid "Powered by"
+msgstr "供电"
+
+#: ../functions.php:135
+msgid "Extra Menu"
+msgstr "额外菜单"
+
+#: ../functions.php:319
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">说：</span>"
+
+#: ../functions.php:322
+msgid "Your comment is awaiting moderation."
+msgstr "您的评论正在等待审核。"
+
+#: ../functions.php:328
+msgid "%1$s at %2$s"
+msgstr "％1 $ s at％2 $ s"
+
+#: ../functions.php:328
+msgid "(Edit)"
+msgstr "（编辑）"
+
+#: ../functions.php:411 ../functions.php:412
+msgid "HTML5 Blank Custom Post"
+msgstr "HTML5空白自定义帖子"
+
+#: ../functions.php:414
+msgid "Add New HTML5 Blank Custom Post"
+msgstr "添加新的HTML5空白自定义帖子"
+
+#: ../functions.php:416
+msgid "Edit HTML5 Blank Custom Post"
+msgstr "编辑HTML5空白自定义帖子"
+
+#: ../functions.php:417
+msgid "New HTML5 Blank Custom Post"
+msgstr "新的HTML5空白自定义帖子"
+
+#: ../functions.php:418 ../functions.php:419
+msgid "View HTML5 Blank Custom Post"
+msgstr "查看HTML5空白自定义帖子"
+
+#: ../functions.php:420
+msgid "Search HTML5 Blank Custom Post"
+msgstr "搜索HTML5空白自定义帖子"
+
+#: ../functions.php:421
+msgid "No HTML5 Blank Custom Posts found"
+msgstr "找不到HTML5空白自定义帖子"
+
+#: ../functions.php:422
+msgid "No HTML5 Blank Custom Posts found in Trash"
+msgstr "在“废纸篓”中找不到HTML5空白自定义帖子"
+
+#: functions.php:446
+msgid "Add New Partner"
+msgstr "添加合作伙伴"
+
+#: category.php:7
+msgid "Categories for "
+msgstr "类别"
+
+#: footer.php:123
+msgid "CCCA WeChat Offcial Account"
+msgstr "澳大利亚中国总商会微信公众号"
+
+#: functions.php:168
+#, fuzzy
+msgid "Chapters Menu"
+msgstr "分会菜单"
+
+#. Name of the template
+#: 
+msgid "Demo Page Template"
+msgstr "演示页面模版"
+
+#: functions.php:448
+msgid "Edit Partner"
+msgstr "编辑合作伙伴"
+
+#: footer.php:8
+msgid "Follow Us!"
+msgstr "关注我们！"
+
+#. Name of the theme
+#: 
+msgid "HTML5 Blank"
+msgstr "HTML5空白"
+
+#. Description of the theme
+#: 
+msgid "HTML5 Blank WordPress Theme"
+msgstr "HTML5空白WordPress主题"
+
+#. URI of the theme
+#: 
+msgid "http://html5blank.com"
+msgstr "http://html5blank.com"
+
+#. Author URI of the theme
+#: 
+msgid "http://toddmotto.com"
+msgstr "http://toddmotto.com"
+
+#: functions.php:166
+msgid "Logged In Header Menu"
+msgstr "登录后主菜单"
+
+#: functions.php:449
+msgid "New Partner"
+msgstr "新建合作伙伴"
+
+#: functions.php:453
+msgid "No Partner found"
+msgstr "未找到合作伙伴"
+
+#: functions.php:454
+msgid "No Partner found in Trash"
+msgstr "回收站中未找到合作伙伴"
+
+#. Name of the template
+#: 
+msgid "No Sidebar"
+msgstr "无侧边栏"
+
+#: functions.php:444
+msgid "Partner"
+msgstr "合作伙伴"
+
+#: functions.php:443
+msgid "Partners"
+msgstr "合作伙伴"
+
+#: functions.php:452
+msgid "Search Partners"
+msgstr "搜索合作伙伴"
+
+#. Author of the theme
+#: 
+msgid "Todd Motto (@toddmotto)"
+msgstr "Todd Motto (@toddmotto)"
+
+#: functions.php:450 functions.php:451
+msgid "View Partner"
+msgstr "查看合作伙伴"
+
+#. Name of the template
+#: 
+msgid "With Sidebar"
+msgstr "带侧边栏"
+
+#: footer.php:67
+msgid "Visitor Count: "
+msgstr "访客人数："
+
+#: footer.php:64
+msgid "© Copyright 2018 China Chamber of Commerce in Australia - All Rights Reserved"
+msgstr "© 2018 澳大利亚中国总商会 - 版权所有"
+
+#: footer.php:37
+msgid "Address"
+msgstr "地址"
+
+#: footer.php:41
+msgid "Contact"
+msgstr "联系方式"
+
+#: footer.php:43
+msgid "Email: "
+msgstr "邮件："
+
+#: footer.php:44
+msgid "Phone: "
+msgstr "电话："
+
+#: footer.php:48
+msgid "World Clock"
+msgstr "世界时间"
+
+#: footer.php:50
+msgid "Sydney: "
+msgstr "悉尼："
+
+#: footer.php:51
+msgid "Beijing: "
+msgstr "北京："
+
+#: footer.php:52
+msgid "New York: "
+msgstr "纽约："
+
+#: functions.php:451
+msgid "China Chamber of Commerce<br> in Australia"
+msgstr "澳大利亚中国总商会"
+
+#: front-page.php:48
+msgid "Our Partners"
+msgstr "合作伙伴"
+
+#: front-page.php:75
+msgid "Previous"
+msgstr "上一页"
+
+#: front-page.php:79
+msgid "Next"
+msgstr "下一页"
+
+#: 
+msgid "Finance Figures"
+msgstr "汇率股指"
+
+#: 
+msgid "Chamber News"
+msgstr "商会新闻"
+
+#: 
+msgid "Event Calendar"
+msgstr "活动预告"
+
+#: 
+msgid "View More"
+msgstr "了解更多"
+
+#: 
+msgid "Want more interaction with us?"
+msgstr "想与我们有更深层次的互动么？"
+
+#: 
+msgid "Contact Us Now!"
+msgstr "现在就联系我们！"
+
+#: 
+#, fuzzy
+msgid "Today's Headline"
+msgstr "今日要闻"
+
+#: 
+msgid "Contact Us"
+msgstr "联系我们"
+
+#: 
+msgid "Thank you for viewing our site. We would be grateful if your great idea can be left."
+msgstr "感谢您访问我们的网站。请留下您的珍贵意见。"
+
+#: 
+#, fuzzy
+msgid "contact-form-7 id=\"125\" title=\"Home Contact Form English\""
+msgstr "contact-form-7 id=\"6\" title=\"Home Contact Form Chinese\""
+
+#: 
+msgid "wp-rss-aggregator source=\"2891\""
+msgstr "wp-rss-aggregator source=\"5037\""
+
+#: 
+#, fuzzy
+msgid "[contact-form-7 id=\"125\" title=\"Home Contact Form English\" html_class=\"mbr-form\"]"
+msgstr "[contact-form-7 id=\"6\" title=\"Home Contact Form Chinese\" html_class=\"mbr-form\"]"
+
+#: 
+msgid "AUD/CNY: "
+msgstr "澳元/人民币："
+
+#: 
+msgid "AUD/USD: "
+msgstr "澳元/美元："
+
+#: 
+msgid "AUD/EUR: "
+msgstr "澳元/欧元："
+
+#: 
+msgid "AUD/JPY: "
+msgstr "澳元/日元："
+
+#: 
+msgid "AUD/HKD: "
+msgstr "澳元/港币："
+
+#: 
+msgid "S&P ASX200: "
+msgstr "澳大利亚标普200："
+
+#: 
+msgid "NASDAQ: "
+msgstr "纳斯达克："
+
+#: 
+msgid "S&P 500: "
+msgstr "标普500："
+
+#: 
+msgid "HANGSENG: "
+msgstr "恒生指数："
+
+#: 
+msgid "SHA: "
+msgstr "上证指数："
+
+#: 
+msgid "Close"
+msgstr "关闭"
+
+#: 
+msgid "Utilities"
+msgstr "小工具"
+
+#: 
+msgid "Event Registration"
+msgstr "活动报名"
+
+#: 
+msgid "Timestamp: "
+msgstr "更新时间："
+
