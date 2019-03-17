@@ -32,14 +32,14 @@
 				<div class="media-container-row">
 					<!-- post details -->
 					<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-					<span class="author"><?php _e( 'Published by', 'maxfu-mobirise4' ); ?> <?php the_author_posts_link(); ?></span>
-					<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'maxfu-mobirise4' ), __( '1 Comment', 'maxfu-mobirise4' ), __( '% Comments', 'maxfu-mobirise4' )); ?></span>
+					<span class="author"><?php _e( 'Published by', 'max-mobirise4' ); ?> <?php the_author_posts_link(); ?></span>
+					<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'max-mobirise4' ), __( '1 Comment', 'max-mobirise4' ), __( '% Comments', 'max-mobirise4' )); ?></span>
 					<!-- /post details -->
 				</div>
 				<div class="media-container-row">
-					<?php the_tags( __( 'Tags: ', 'maxfu-mobirise4' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
-					<p><?php _e( 'Categorised in: ', 'maxfu-mobirise4' ); the_category(', '); // Separated by commas ?></p>
-					<p><?php _e( 'This post was written by ', 'maxfu-mobirise4' ); the_author(); ?></p>
+					<?php the_tags( __( 'Tags: ', 'max-mobirise4' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+					<p><?php _e( 'Categorised in: ', 'max-mobirise4' ); the_category(', '); // Separated by commas ?></p>
+					<p><?php _e( 'This post was written by ', 'max-mobirise4' ); the_author(); ?></p>
 					<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 					<?php comments_template(); ?>
 				</div>
@@ -53,7 +53,7 @@
 			<div class="container">
 				<div class="media-container-row">
 					<div class="mbr-text col-12 col-md-8 mbr-fonts-style display-7">
-						<h2><?php _e( 'Sorry, nothing to display.', 'maxfu-mobirise4' ); ?></h2>
+						<h2><?php _e( 'Sorry, nothing to display.', 'max-mobirise4' ); ?></h2>
 					</div>
 				</div>
 			</div>

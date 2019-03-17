@@ -39,7 +39,7 @@
         <div class="container">
           <div class="media-container-row">
             <div class="title col-12">
-              <h2 class="align-center mbr-bold mbr-white mbr-fonts-style display-1"><?php _e('Sign In', 'maxfu-mobirise4'); ?></h2>
+              <h2 class="align-center mbr-bold mbr-white mbr-fonts-style display-1"><?php _e('Sign In', 'max-mobirise4'); ?></h2>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@
       <div class="container">
         <div class="media-container-row">
           <div class="mbr-text col-12 mbr-fonts-style display-7">
-            <h2><?php _e( 'Sorry, nothing to display.', 'maxfu-mobirise4' ); ?></h2>
+            <h2><?php _e( 'Sorry, nothing to display.', 'max-mobirise4' ); ?></h2>
           </div>
         </div>
       </div>

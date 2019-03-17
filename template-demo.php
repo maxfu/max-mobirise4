@@ -29,7 +29,7 @@
 			<!-- article -->
 			<article>
 
-				<h2><?php _e( 'Sorry, nothing to display.', 'maxfu-mobirise4' ); ?></h2>
+				<h2><?php _e( 'Sorry, nothing to display.', 'max-mobirise4' ); ?></h2>
 
 			</article>
 			<!-- /article -->

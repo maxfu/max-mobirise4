@@ -5,7 +5,7 @@
 				<div class="container">
 					<div class="media-container-row">
 						<div class="col-md-8 align-center">
-							<h2 class="pb-3 mbr-fonts-style display-2"><?php _e('Follow Us!', 'maxfu-mobirise4'); ?></h2>
+							<h2 class="pb-3 mbr-fonts-style display-2"><?php _e('Follow Us!', 'max-mobirise4'); ?></h2>
 							<div class="social-list pl-0 mb-0">
 								<a data-toggle="modal" data-target="#wechat-modal" href="#" target="_blank">
 									<span class="px-2 socicon-wechat socicon mbr-iconfont mbr-iconfont-social"></span>
@@ -34,22 +34,22 @@
 							</div>
 						</div>
 						<div class="col-12 col-md-3 mbr-fonts-style display-7">
-							<h5 class="pb-3"><?php _e('Address', 'maxfu-mobirise4'); ?></h5>
+							<h5 class="pb-3"><?php _e('Address', 'max-mobirise4'); ?></h5>
 							<p class="mbr-text">Level 3, 39-41 York Street, Sydney NSW 2000 Australia</p>
 						</div>
 						<div class="col-12 col-md-3 mbr-fonts-style display-7">
-							<h5 class="pb-3"><?php _e('Contact', 'maxfu-mobirise4'); ?></h5>
+							<h5 class="pb-3"><?php _e('Contact', 'max-mobirise4'); ?></h5>
 							<p class="mbr-text">
-								<?php _e('Email: ', 'maxfu-mobirise4'); ?>info@cccaau.org<br>
-								<?php _e('Phone: ', 'maxfu-mobirise4'); ?>(02) 8235 5925;<br>(02) 8299 8010
+								<?php _e('Email: ', 'max-mobirise4'); ?>info@cccaau.org<br>
+								<?php _e('Phone: ', 'max-mobirise4'); ?>(02) 8235 5925;<br>(02) 8299 8010
 							</p>
 						</div>
 						<div class="col-12 col-md-3 mbr-fonts-style display-7">
-							<h5 class="pb-3"><?php _e('World Clock', 'maxfu-mobirise4'); ?></h5>
+							<h5 class="pb-3"><?php _e('World Clock', 'max-mobirise4'); ?></h5>
 							<p class="mbr-text">
-								<?php _e('Sydney: ', 'maxfu-mobirise4'); ?><span id="audatetime">SYD</span><br>
-								<?php _e('Beijing: ', 'maxfu-mobirise4'); ?><span id="cndatetime">PK</span><br>
-								<?php _e('New York: ', 'maxfu-mobirise4'); ?><span id="usdatetime">US</span>
+								<?php _e('Sydney: ', 'max-mobirise4'); ?><span id="audatetime">SYD</span><br>
+								<?php _e('Beijing: ', 'max-mobirise4'); ?><span id="cndatetime">PK</span><br>
+								<?php _e('New York: ', 'max-mobirise4'); ?><span id="usdatetime">US</span>
 							</p>
 						</div>
 					</div>
@@ -57,7 +57,7 @@
 						<div class="col-md-6 copyright">
 						</div>
 						<div class="col-md-3">
-							<p class="mbr-text mbr-fonts-style display-7"><span><?php _e('Visitor Count: ', 'maxfu-mobirise4'); ?><?php echo ccca_vcounter_get('counter'); ?><span></p>
+							<p class="mbr-text mbr-fonts-style display-7"><span><?php _e('Visitor Count: ', 'max-mobirise4'); ?><?php echo ccca_vcounter_get('counter'); ?><span></p>
 						</div>
 						<div class="col-md-3">
 							<div class="social-list align-right">
@@ -81,7 +81,7 @@
 							<div class="col-sm-12">
 								<hr>
 								<p class="mbr-text mbr-fonts-style display-7">
-									<?php _e('© Copyright 2018 China Chamber of Commerce in Australia - All Rights Reserved', 'maxfu-mobirise4'); ?><span style="float: right"><?php _e('Powered by ', 'maxfu-mobirise4'); ?><a href="https://au.alibabacloud.com" style="color: white ;" target="_blank">Alibaba Cloud</a></span>
+									<?php _e('© Copyright 2018 China Chamber of Commerce in Australia - All Rights Reserved', 'max-mobirise4'); ?><span style="float: right"><?php _e('Powered by ', 'max-mobirise4'); ?><a href="https://au.alibabacloud.com" style="color: white ;" target="_blank">Alibaba Cloud</a></span>
 								</p>
 							</div>
 						</div>
@@ -109,16 +109,16 @@
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h2 class="mbr-section-title align-center mbr-fonts-style display-2 modal-title" id="HeadlinesToday"><?php _e('Today\'s Headline', 'maxfu-mobirise4'); ?></h2>
-						<button type="button" class="close" data-dismiss="modal" aria-label="<?php _e('Close', 'maxfu-mobirise4'); ?>">
+						<h2 class="mbr-section-title align-center mbr-fonts-style display-2 modal-title" id="HeadlinesToday"><?php _e('Today\'s Headline', 'max-mobirise4'); ?></h2>
+						<button type="button" class="close" data-dismiss="modal" aria-label="<?php _e('Close', 'max-mobirise4'); ?>">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
 					<div class="modal-body">
-						<?php echo do_shortcode('[' . __('wp-rss-aggregator source="2891"', 'maxfu-mobirise4') . ' limit="20" pagination="off" links_before=\'<ul class="mbr-text mbr-fonts-style display-7 rss-aggregator">\' link_before=\'<li class="feed-item-link">\']'); ?>
+						<?php echo do_shortcode('[' . __('wp-rss-aggregator source="2891"', 'max-mobirise4') . ' limit="20" pagination="off" links_before=\'<ul class="mbr-text mbr-fonts-style display-7 rss-aggregator">\' link_before=\'<li class="feed-item-link">\']'); ?>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-md btn-primary display-4" data-dismiss="modal"><?php _e('Close', 'maxfu-mobirise4'); ?></button>
+						<button type="button" class="btn btn-md btn-primary display-4" data-dismiss="modal"><?php _e('Close', 'max-mobirise4'); ?></button>
 					</div>
 				</div>
 			</div>
@@ -129,7 +129,7 @@
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-body">
-						<h2 class="mbr-section-title align-center mbr-fonts-style display-2 modal-title" id="sidebarModalLabel"><?php _e('Utilities', 'maxfu-mobirise4'); ?></h2>
+						<h2 class="mbr-section-title align-center mbr-fonts-style display-2 modal-title" id="sidebarModalLabel"><?php _e('Utilities', 'max-mobirise4'); ?></h2>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
@@ -148,7 +148,7 @@
 								<span aria-hidden="true" style="position: absolute; top: 5px; right: 5px;">&times;</span>
 							</button>
 							<img class="wp-image-6813 size-medium" src="https://www.cccaau.org/wp-content/uploads/2018/08/qrcode_for_gh_ce8f8df112db_344-250x250.jpg" alt="澳大利亚中国总商会微信公众号" width="250" height="250" />
-							<figcaption><?php _e('CCCA WeChat Offcial Account', 'maxfu-mobirise4'); ?></figcaption>
+							<figcaption><?php _e('CCCA WeChat Offcial Account', 'max-mobirise4'); ?></figcaption>
 						</figure>
 					</div>
 				</div>

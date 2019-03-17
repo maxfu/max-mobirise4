@@ -4,7 +4,7 @@
 		<!-- section -->
 		<section>
 
-			<h1><?php _e( 'Latest Posts', 'maxfu-mobirise4' ); ?></h1>
+			<h1><?php _e( 'Latest Posts', 'max-mobirise4' ); ?></h1>
 
 			<?php get_template_part('loop'); ?>
 

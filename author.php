@@ -6,13 +6,13 @@
 
 		<?php if (have_posts()): the_post(); ?>
 
-			<h1><?php _e( 'Author Archives for ', 'maxfu-mobirise4' ); echo get_the_author(); ?></h1>
+			<h1><?php _e( 'Author Archives for ', 'max-mobirise4' ); echo get_the_author(); ?></h1>
 
 		<?php if ( get_the_author_meta('description')) : ?>
 
 		<?php echo get_avatar(get_the_author_meta('user_email')); ?>
 
-			<h2><?php _e( 'About ', 'maxfu-mobirise4' ); echo get_the_author() ; ?></h2>
+			<h2><?php _e( 'About ', 'max-mobirise4' ); echo get_the_author() ; ?></h2>
 
 			<?php echo wpautop( get_the_author_meta('description') ); ?>
 
@@ -43,8 +43,8 @@
 						<?php the_date(); ?> <?php the_time(); ?>
 					</time>
 				</span>
-				<span class="author"><?php _e( 'Published by', 'maxfu-mobirise4' ); ?> <?php the_author_posts_link(); ?></span>
-				<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'maxfu-mobirise4' ), __( '1 Comment', 'maxfu-mobirise4' ), __( '% Comments', 'maxfu-mobirise4' )); ?></span>
+				<span class="author"><?php _e( 'Published by', 'max-mobirise4' ); ?> <?php the_author_posts_link(); ?></span>
+				<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'max-mobirise4' ), __( '1 Comment', 'max-mobirise4' ), __( '% Comments', 'max-mobirise4' )); ?></span>
 				<!-- /post details -->
 
 				<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
@@ -63,7 +63,7 @@
 			<!-- article -->
 			<article>
 
-				<h2><?php _e( 'Sorry, nothing to display.', 'maxfu-mobirise4' ); ?></h2>
+				<h2><?php _e( 'Sorry, nothing to display.', 'max-mobirise4' ); ?></h2>
 
 			</article>
 			<!-- /article -->

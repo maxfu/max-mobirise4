@@ -7,9 +7,9 @@
 			<!-- article -->
 			<article id="post-404">
 
-				<h1><?php _e( 'Page not found', 'maxfu-mobirise4' ); ?></h1>
+				<h1><?php _e( 'Page not found', 'max-mobirise4' ); ?></h1>
 				<h2>
-					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'maxfu-mobirise4' ); ?></a>
+					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'max-mobirise4' ); ?></a>
 				</h2>
 
 			</article>

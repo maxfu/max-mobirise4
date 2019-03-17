@@ -56,7 +56,7 @@ if (function_exists('add_theme_support'))
     add_theme_support('automatic-feed-links');
 
     // Localisation Support
-    load_theme_textdomain('maxfu-mobirise4', get_template_directory() . '/languages');
+    load_theme_textdomain('max-mobirise4', get_template_directory() . '/languages');
 }
 
 /*------------------------------------*\
@@ -64,7 +64,7 @@ if (function_exists('add_theme_support'))
 \*------------------------------------*/
 
 // HTML5 Blank navigation
-function maxfu_mobirise4_nav()
+function max_mobirise4_nav()
 {
     wp_nav_menu(
     array(
@@ -89,7 +89,7 @@ function maxfu_mobirise4_nav()
 }
 
 // Load HTML5 Blank scripts (header.php)
-function maxfu_mobirise4_header_scripts()
+function max_mobirise4_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
         if (HTML5_DEBUG) {
@@ -105,7 +105,7 @@ function maxfu_mobirise4_header_scripts()
 
             // Custom scripts
             wp_register_script(
-                'maxfu-mobirise4-scripts',
+                'max-mobirise4-scripts',
                 get_template_directory_uri() . '/js/scripts.js',
                 array(
                     'conditionizr',
@@ -114,20 +114,20 @@ function maxfu_mobirise4_header_scripts()
                 '1.0.0', true);
 
             // Enqueue Scripts
-            wp_enqueue_script('maxfu-mobirise4-scripts');
+            wp_enqueue_script('max-mobirise4-scripts');
 
         // If production
         } else {
             // Scripts minify
-            wp_register_script('maxfu-mobirise4-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', true);
+            wp_register_script('max-mobirise4-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', true);
             // Enqueue Scripts
-            wp_enqueue_script('maxfu-mobirise4-scripts');
+            wp_enqueue_script('max-mobirise4-scripts');
         }
     }
 }
 
 // Load HTML5 Blank conditional scripts
-function maxfu_mobirise4_conditional_scripts()
+function max_mobirise4_conditional_scripts()
 {
     if (is_page('pagenamehere')) {
         // Conditional script(s)
@@ -137,22 +137,22 @@ function maxfu_mobirise4_conditional_scripts()
 }
 
 // Load HTML5 Blank styles
-function maxfu_mobirise4_styles()
+function max_mobirise4_styles()
 {
     if (HTML5_DEBUG) {
         // normalize-css
         wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0');
 
         // Custom CSS
-        wp_register_style('maxfu-mobirise4-style', get_template_directory_uri() . '/style.css', array('normalize'), '1.0');
+        wp_register_style('max-mobirise4-style', get_template_directory_uri() . '/style.css', array('normalize'), '1.0');
 
         // Register CSS
-        wp_enqueue_style('maxfu-mobirise4-style');
+        wp_enqueue_style('max-mobirise4-style');
     } else {
         // Custom CSS
-        wp_register_style('maxfu-mobirise4-style', get_template_directory_uri() . '/style.css', array(), '1.0');
+        wp_register_style('max-mobirise4-style', get_template_directory_uri() . '/style.css', array(), '1.0');
         // Register CSS
-        wp_enqueue_style('maxfu-mobirise4-style');
+        wp_enqueue_style('max-mobirise4-style');
     }
 }
 
@@ -160,10 +160,10 @@ function maxfu_mobirise4_styles()
 function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
-        'header-menu' => __('Header Menu', 'maxfu-mobirise4'), // Main Navigation
-        'header-menu-logged-in' => __('Logged In Header Menu', 'maxfu-mobirise4'), // Main Navigation
-        'sidebar-menu' => __('Sidebar Menu', 'maxfu-mobirise4'), // Sidebar Navigation
-        'chapters-menu' => __('Chapters Menu', 'maxfu-mobirise4') // Extra Navigation if needed (duplicate as many as you need!)
+        'header-menu' => __('Header Menu', 'max-mobirise4'), // Main Navigation
+        'header-menu-logged-in' => __('Logged In Header Menu', 'max-mobirise4'), // Main Navigation
+        'sidebar-menu' => __('Sidebar Menu', 'max-mobirise4'), // Sidebar Navigation
+        'chapters-menu' => __('Chapters Menu', 'max-mobirise4') // Extra Navigation if needed (duplicate as many as you need!)
     ));
 }
 
@@ -216,8 +216,8 @@ if (function_exists('register_sidebar'))
 {
     // Define Sidebar Widget Area 1
     register_sidebar(array(
-        'name' => __('Widget Area 1', 'maxfu-mobirise4'),
-        'description' => __('Description for this widget-area...', 'maxfu-mobirise4'),
+        'name' => __('Widget Area 1', 'max-mobirise4'),
+        'description' => __('Description for this widget-area...', 'max-mobirise4'),
         'id' => 'widget-area-1',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
@@ -227,8 +227,8 @@ if (function_exists('register_sidebar'))
 
     // Define Sidebar Widget Area 2
     register_sidebar(array(
-        'name' => __('Widget Area 2', 'maxfu-mobirise4'),
-        'description' => __('Description for this widget-area...', 'maxfu-mobirise4'),
+        'name' => __('Widget Area 2', 'max-mobirise4'),
+        'description' => __('Description for this widget-area...', 'max-mobirise4'),
         'id' => 'widget-area-2',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
@@ -293,7 +293,7 @@ function html5wp_excerpt($length_callback = '', $more_callback = '')
 function html5_blank_view_article($more)
 {
     global $post;
-    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'maxfu-mobirise4') . '</a>';
+    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'max-mobirise4') . '</a>';
 }
 
 // Remove Admin bar
@@ -316,7 +316,7 @@ function remove_thumbnail_dimensions( $html )
 }
 
 // Custom Gravatar in Settings > Discussion
-function maxfu_mobirise4_gravatar ($avatar_defaults)
+function max_mobirise4_gravatar ($avatar_defaults)
 {
     $myavatar = get_template_directory_uri() . '/img/gravatar.jpg';
     $avatar_defaults[$myavatar] = "Custom Gravatar";
@@ -334,7 +334,7 @@ function enable_threaded_comments()
 }
 
 // Custom Comments Callback
-function maxfu_mobirise4_comments($comment, $args, $depth)
+function max_mobirise4_comments($comment, $args, $depth)
 {
     $GLOBALS['comment'] = $comment;
     extract($args, EXTR_SKIP);
@@ -382,10 +382,10 @@ function maxfu_mobirise4_comments($comment, $args, $depth)
 \*------------------------------------*/
 
 // Add Actions
-add_action('init', 'maxfu_mobirise4_header_scripts'); // Add Custom Scripts to wp_head
-add_action('wp_print_scripts', 'maxfu_mobirise4_conditional_scripts'); // Add Conditional Page Scripts
+add_action('init', 'max_mobirise4_header_scripts'); // Add Custom Scripts to wp_head
+add_action('wp_print_scripts', 'max_mobirise4_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
-add_action('wp_enqueue_scripts', 'maxfu_mobirise4_styles'); // Add Theme Stylesheet
+add_action('wp_enqueue_scripts', 'max_mobirise4_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
@@ -406,7 +406,7 @@ remove_action('wp_head', 'rel_canonical');
 remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 
 // Add Filters
-add_filter('avatar_defaults', 'maxfu_mobirise4_gravatar'); // Custom Gravatar in Settings > Discussion
+add_filter('avatar_defaults', 'max_mobirise4_gravatar'); // Custom Gravatar in Settings > Discussion
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
 add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
 add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
@@ -446,18 +446,18 @@ function create_post_type_html5()
     register_post_type('html5-blank', // Register Custom Post Type
         array(
         'labels' => array(
-            'name' => __('Partners', 'maxfu-mobirise4'), // Rename these to suit
-            'singular_name' => __('Partner', 'maxfu-mobirise4'),
-            'add_new' => __('Add New', 'maxfu-mobirise4'),
-            'add_new_item' => __('Add New Partner', 'maxfu-mobirise4'),
-            'edit' => __('Edit', 'maxfu-mobirise4'),
-            'edit_item' => __('Edit Partner', 'maxfu-mobirise4'),
-            'new_item' => __('New Partner', 'maxfu-mobirise4'),
-            'view' => __('View Partner', 'maxfu-mobirise4'),
-            'view_item' => __('View Partner', 'maxfu-mobirise4'),
-            'search_items' => __('Search Partners', 'maxfu-mobirise4'),
-            'not_found' => __('No Partner found', 'maxfu-mobirise4'),
-            'not_found_in_trash' => __('No Partner found in Trash', 'maxfu-mobirise4')
+            'name' => __('Partners', 'max-mobirise4'), // Rename these to suit
+            'singular_name' => __('Partner', 'max-mobirise4'),
+            'add_new' => __('Add New', 'max-mobirise4'),
+            'add_new_item' => __('Add New Partner', 'max-mobirise4'),
+            'edit' => __('Edit', 'max-mobirise4'),
+            'edit_item' => __('Edit Partner', 'max-mobirise4'),
+            'new_item' => __('New Partner', 'max-mobirise4'),
+            'view' => __('View Partner', 'max-mobirise4'),
+            'view_item' => __('View Partner', 'max-mobirise4'),
+            'search_items' => __('Search Partners', 'max-mobirise4'),
+            'not_found' => __('No Partner found', 'max-mobirise4'),
+            'not_found_in_trash' => __('No Partner found in Trash', 'max-mobirise4')
         ),
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
@@ -879,24 +879,24 @@ function quarterly_fetcher( ) {
   echo '  <div class="modal-dialog" role="document">'; echo "\r\n";
   echo '    <div class="modal-content">'; echo "\r\n";
   echo '      <div class="modal-header">'; echo "\r\n";
-  echo '        <h2 class="mbr-section-title align-center mbr-fonts-style display-2 modal-title" id="financeFigureLabel"><?php _e(\'Finance Figures\', \'maxfu-mobirise4\'); ?>'; echo '</h2>'; echo "\r\n";
-  echo '        <button type="button" class="close" data-dismiss="modal" aria-label="<?php _e(\'Close\', \'maxfu-mobirise4\'); ?>'; echo '"><span aria-hidden="true">&times;</span></button>'; echo "\r\n";
+  echo '        <h2 class="mbr-section-title align-center mbr-fonts-style display-2 modal-title" id="financeFigureLabel"><?php _e(\'Finance Figures\', \'max-mobirise4\'); ?>'; echo '</h2>'; echo "\r\n";
+  echo '        <button type="button" class="close" data-dismiss="modal" aria-label="<?php _e(\'Close\', \'max-mobirise4\'); ?>'; echo '"><span aria-hidden="true">&times;</span></button>'; echo "\r\n";
   echo '      </div>'; echo "\r\n";
   echo '      <div class="modal-body">'; echo "\r\n";
-  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'Timestamp: \', \'maxfu-mobirise4\'); ?>'; echo $ts_date . '</p>'; echo "\r\n";
-  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'AUD/CNY: \', \'maxfu-mobirise4\'); ?>'; echo round(($result_aud_cny['rate']),4) . '</p>'; echo "\r\n";
-  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'AUD/USD: \', \'maxfu-mobirise4\'); ?>'; echo round(($result_aud_usd['rate']),4) . '</p>'; echo "\r\n";
-  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'AUD/EUR: \', \'maxfu-mobirise4\'); ?>'; echo round(($result_aud_eur['rate']),4) . '</p>'; echo "\r\n";
-  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'AUD/JPY: \', \'maxfu-mobirise4\'); ?>'; echo round(($result_aud_jpy['rate']),4) . '</p>'; echo "\r\n";
-  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'AUD/HKD: \', \'maxfu-mobirise4\'); ?>'; echo round(($result_aud_hkd['rate']),4) . '</p>'; echo "\r\n";
-  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'S&P ASX200: \', \'maxfu-mobirise4\'); ?>'; echo $result_as51['last_price'] . ' ' . $result_as51['change_price_per'] . '</p>'; echo "\r\n";
-  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'NASDAQ: \', \'maxfu-mobirise4\'); ?>'; echo $result_ccmp['last_price'] . ' ' . $result_ccmp['change_price_per'] . '</p>'; echo "\r\n";
-  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'S&P 500: \', \'maxfu-mobirise4\'); ?>'; echo $result_spx['last_price'] . ' ' . $result_spx['change_price_per'] . '</p>'; echo "\r\n";
-  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'HANGSENG: \', \'maxfu-mobirise4\'); ?>'; echo $result_110000['last_price'] . ' ' . $result_110000['change_price_per'] . '</p>'; echo "\r\n";
-  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'SHA: \', \'maxfu-mobirise4\'); ?>'; echo $result_000001['last_price'] . ' ' . $result_000001['change_price_per'] . '</p>'; echo "\r\n";
+  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'Timestamp: \', \'max-mobirise4\'); ?>'; echo $ts_date . '</p>'; echo "\r\n";
+  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'AUD/CNY: \', \'max-mobirise4\'); ?>'; echo round(($result_aud_cny['rate']),4) . '</p>'; echo "\r\n";
+  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'AUD/USD: \', \'max-mobirise4\'); ?>'; echo round(($result_aud_usd['rate']),4) . '</p>'; echo "\r\n";
+  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'AUD/EUR: \', \'max-mobirise4\'); ?>'; echo round(($result_aud_eur['rate']),4) . '</p>'; echo "\r\n";
+  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'AUD/JPY: \', \'max-mobirise4\'); ?>'; echo round(($result_aud_jpy['rate']),4) . '</p>'; echo "\r\n";
+  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'AUD/HKD: \', \'max-mobirise4\'); ?>'; echo round(($result_aud_hkd['rate']),4) . '</p>'; echo "\r\n";
+  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'S&P ASX200: \', \'max-mobirise4\'); ?>'; echo $result_as51['last_price'] . ' ' . $result_as51['change_price_per'] . '</p>'; echo "\r\n";
+  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'NASDAQ: \', \'max-mobirise4\'); ?>'; echo $result_ccmp['last_price'] . ' ' . $result_ccmp['change_price_per'] . '</p>'; echo "\r\n";
+  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'S&P 500: \', \'max-mobirise4\'); ?>'; echo $result_spx['last_price'] . ' ' . $result_spx['change_price_per'] . '</p>'; echo "\r\n";
+  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'HANGSENG: \', \'max-mobirise4\'); ?>'; echo $result_110000['last_price'] . ' ' . $result_110000['change_price_per'] . '</p>'; echo "\r\n";
+  echo '        <p class="mbr-text mbr-fonts-style display-7"><?php _e(\'SHA: \', \'max-mobirise4\'); ?>'; echo $result_000001['last_price'] . ' ' . $result_000001['change_price_per'] . '</p>'; echo "\r\n";
   echo '      </div>'; echo "\r\n";
   echo '      <div class="modal-footer">'; echo "\r\n";
-  echo '        <button type="button" class="btn btn-md btn-primary display-4" data-dismiss="modal"><?php _e(\'Close\', \'maxfu-mobirise4\'); ?>'; echo '</button>'; echo "\r\n";
+  echo '        <button type="button" class="btn btn-md btn-primary display-4" data-dismiss="modal"><?php _e(\'Close\', \'max-mobirise4\'); ?>'; echo '</button>'; echo "\r\n";
   echo '      </div>'; echo "\r\n";
   echo '    </div>'; echo "\r\n";
   echo '  </div>'; echo "\r\n";
@@ -913,7 +913,7 @@ add_action( 'quarterly_fetcher', 'quarterly_fetcher' );
 // Custom Cron Recurrences
 function quarterly_raptile_recurrence( $schedules ) {
 	$schedules['every_quarter'] = array(
-		'display' => __( 'Every Quarter', 'maxfu-mobirise4' ),
+		'display' => __( 'Every Quarter', 'max-mobirise4' ),
 		'interval' => 900,
 	);
 	return $schedules;
@@ -964,7 +964,7 @@ add_action( 'daily_fetcher', 'daily_fetcher' );
 // Custom Cron Recurrences
 function daily_raptile_recurrence( $schedules ) {
 	$schedules['every_day'] = array(
-		'display' => __( 'Every Day', 'maxfu-mobirise4' ),
+		'display' => __( 'Every Day', 'max-mobirise4' ),
 		'interval' => 86400,
 	);
 	return $schedules;

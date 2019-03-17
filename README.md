@@ -1,1 +1,1 @@
-# maxfu-mobirise4
+# max-mobirise4

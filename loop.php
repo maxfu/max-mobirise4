@@ -23,8 +23,8 @@
 				<?php the_date(); ?> <?php the_time(); ?>
 			</time>
 		</span>
-		<span class="author"><?php _e( 'Published by', 'maxfu-mobirise4' ); ?> <?php the_author_posts_link(); ?></span>
-		<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'maxfu-mobirise4' ), __( '1 Comment', 'maxfu-mobirise4' ), __( '% Comments', 'maxfu-mobirise4' )); ?></span>
+		<span class="author"><?php _e( 'Published by', 'max-mobirise4' ); ?> <?php the_author_posts_link(); ?></span>
+		<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'max-mobirise4' ), __( '1 Comment', 'max-mobirise4' ), __( '% Comments', 'max-mobirise4' )); ?></span>
 		<!-- /post details -->
 
 		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
@@ -40,7 +40,7 @@
 
 	<!-- article -->
 	<article>
-		<h2><?php _e( 'Sorry, nothing to display.', 'maxfu-mobirise4' ); ?></h2>
+		<h2><?php _e( 'Sorry, nothing to display.', 'max-mobirise4' ); ?></h2>
 	</article>
 	<!-- /article -->
 
