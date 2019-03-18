@@ -18,14 +18,14 @@
 		<meta name="robots" content="index, follow">
 
 		<?php wp_head(); ?>
-		<script>
+		<!-- script>
         // conditionizr.com
         // configure environment tests
         conditionizr.config({
-            assets: '<?php echo get_template_directory_uri(); ?>',
+            assets: '<?php // echo get_template_directory_uri(); ?>',
             tests: {}
         });
-        </script>
+			</script -->
 
 	</head>
 	<body <?php body_class(); ?>>
