@@ -100,7 +100,7 @@ function max_mobirise4_header_scripts()
           wp_register_script('jquery-migrate', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js', array('jquery-core'), '3.0.1', true); // Custom scripts
           wp_register_script('conditionizr', 'https://cdnjs.cloudflare.com/ajax/libs/conditionizr.js/4.1.0/conditionizr.min.js', array(), '4.1.0', true); // Conditionizr
           wp_register_script('modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', array(), '2.8.3', true); // Modernizr
-          wp_register_script('max-mobirise4-scripts', get_template_directory_uri() . '/js/scripts.js', array('conditionizr', 'modernizr', 'jquery-core', 'jquery-migrate'), '1.0.0', true); // Custom scripts
+          wp_register_script('max-mobirise4-scripts', get_template_directory_uri() . '/assets/mobirise/js/scripts.js', array('conditionizr', 'modernizr', 'jquery-core', 'jquery-migrate'), '1.0.0', true); // Custom scripts
 
           // Enqueue Scripts
           wp_enqueue_script('max-mobirise4-scripts');
@@ -108,7 +108,7 @@ function max_mobirise4_header_scripts()
         // If production
         } else {
             // Scripts minify
-            wp_register_script('max-mobirise4-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', true);
+            wp_register_script('max-mobirise4-scripts', get_template_directory_uri() . '/assets/mobirise/js/scripts.js', array(), '1.0.0', true);
             // Enqueue Scripts
             wp_enqueue_script('max-mobirise4-scripts');
         }
@@ -307,7 +307,7 @@ function remove_thumbnail_dimensions( $html )
 // Custom Gravatar in Settings > Discussion
 function max_mobirise4_gravatar ($avatar_defaults)
 {
-    $myavatar = get_template_directory_uri() . '/img/gravatar.jpg';
+    $myavatar = get_template_directory_uri() . '/assets/images/gravatar.jpg';
     $avatar_defaults[$myavatar] = "Custom Gravatar";
     return $avatar_defaults;
 }
@@ -485,7 +485,7 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 function ccca_styles() {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-      // wp_register_style('mobirise-icons', get_template_directory_uri() . '/assets/web/assets/mobirise-icons/mobirise-icons.css', array(), '1.0', 'all');
+      // wp_register_style('mobirise-icons', get_template_directory_uri() . '/assets/mobirise-icons/mobirise-icons.css', array(), '1.0', 'all');
       // wp_enqueue_style('mobirise-icons'); // Enqueue it!
 
       wp_register_style('tether', 'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/css/tether.min.css', array(), '1.4.4', 'all');
