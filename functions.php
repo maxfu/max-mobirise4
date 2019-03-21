@@ -485,8 +485,8 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 function ccca_styles() {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-      // wp_register_style('mobirise-icons', get_template_directory_uri() . '/assets/mobirise-icons/mobirise-icons.css', array(), '1.0', 'all');
-      // wp_enqueue_style('mobirise-icons'); // Enqueue it!
+      wp_register_style('mobirise-icons', get_template_directory_uri() . '/assets/mobirise-icons/mobirise-icons.css', array(), '1.0', 'all');
+      wp_enqueue_style('mobirise-icons'); // Enqueue it!
 
       wp_register_style('tether', 'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/css/tether.min.css', array(), '1.4.4', 'all');
       wp_enqueue_style('tether'); // Enqueue it!
