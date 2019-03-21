@@ -3,11 +3,7 @@
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 	<style type="text/css">
 	.cid-qUC8WLfjwn {
-		<?php if ( has_post_thumbnail() ) { ?>
-		background-image: url("<?php the_post_thumbnail_url('full'); ?>");
-		<?php } else { ?>
 		background-image: url("<?php echo get_template_directory_uri(); ?>/assets/images/jumbotron.jpg");
-		<?php } ?>
 	}
 	</style>
 
