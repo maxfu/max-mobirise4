@@ -128,21 +128,14 @@ function max_mobirise4_conditional_scripts()
 // Load HTML5 Blank styles
 function max_mobirise4_styles()
 {
-    if (HTML5_DEBUG) {
-        // normalize-css
-        wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0');
+  // normalize-css
+  wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0');
 
-        // Custom CSS
-        wp_register_style('max-mobirise4-style', get_template_directory_uri() . '/style.css', array('normalize'), '1.0');
+  // Custom CSS
+  wp_register_style('max-mobirise4-style', get_template_directory_uri() . '/style.css', array('normalize'), '1.0');
 
-        // Register CSS
-        wp_enqueue_style('max-mobirise4-style');
-    } else {
-        // Custom CSS
-        wp_register_style('max-mobirise4-style', get_template_directory_uri() . '/style.css', array(), '1.0');
-        // Register CSS
-        wp_enqueue_style('max-mobirise4-style');
-    }
+  // Register CSS
+  wp_enqueue_style('max-mobirise4-style');
 }
 
 // Register HTML5 Blank Navigation
