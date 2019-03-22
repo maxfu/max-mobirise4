@@ -60,6 +60,58 @@ if (function_exists('add_theme_support'))
 }
 
 /*------------------------------------*\
+    Actions + Filters + ShortCodes
+\*------------------------------------*/
+
+// Add Actions
+add_action('init', 'max_mobirise4_header_scripts'); // Add Custom Scripts to wp_head
+add_action('wp_print_scripts', 'max_mobirise4_conditional_scripts'); // Add Conditional Page Scripts
+add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
+add_action('wp_enqueue_scripts', 'max_mobirise4_styles'); // Add Theme Stylesheet
+add_action('wp_enqueue_scripts', 'max_mobirise4_scripts'); // Add Custom Scripts to wp_footer
+add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
+add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
+add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
+add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
+
+// Remove Actions
+remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
+remove_action('wp_head', 'feed_links', 2); // Display the links to the general feeds: Post and Comment Feed
+remove_action('wp_head', 'rsd_link'); // Display the link to the Really Simple Discovery service endpoint, EditURI link
+remove_action('wp_head', 'wlwmanifest_link'); // Display the link to the Windows Live Writer manifest file.
+remove_action('wp_head', 'index_rel_link'); // Index link
+remove_action('wp_head', 'parent_post_rel_link', 10, 0); // Prev link
+remove_action('wp_head', 'start_post_rel_link', 10, 0); // Start link
+remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // Display relational links for the posts adjacent to the current post.
+remove_action('wp_head', 'wp_generator'); // Display the XHTML generator that is generated on the wp_head hook, WP version
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+remove_action('wp_head', 'rel_canonical');
+remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+
+// Add Filters
+add_filter('avatar_defaults', 'max_mobirise4_gravatar'); // Custom Gravatar in Settings > Discussion
+add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
+add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
+add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
+add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
+// add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected classes (Commented out by default)
+// add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected ID (Commented out by default)
+// add_filter('page_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> Page ID's (Commented out by default)
+add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove invalid rel attribute
+add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
+add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
+add_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
+add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
+add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
+add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
+add_filter('post_thumbnail_html', 'remove_width_attribute', 10 ); // Remove width and height dynamic attributes to post images
+add_filter('image_send_to_editor', 'remove_width_attribute', 10 ); // Remove width and height dynamic attributes to post images
+// add_filter('auth_cookie_expiration', 'ccca_expiration_filter', 99, 3);
+
+// Remove Filters
+remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
+
+/*------------------------------------*\
     Functions
 \*------------------------------------*/
 
@@ -130,12 +182,47 @@ function max_mobirise4_styles()
 {
   // normalize-css
   wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0');
-
-  // Custom CSS
   wp_register_style('max-mobirise4-style', get_template_directory_uri() . '/style.css', array('normalize'), '1.0');
-
-  // Register CSS
   wp_enqueue_style('max-mobirise4-style');
+
+  if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+
+    wp_register_style('mobirise-icons', get_template_directory_uri() . '/assets/mobirise-icons/mobirise-icons.css', array(), '1.0', 'all');
+    wp_enqueue_style('mobirise-icons'); // Enqueue it!
+
+    wp_register_style('tether', 'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/css/tether.min.css', array(), '1.4.4', 'all');
+    wp_enqueue_style('tether'); // Enqueue it!
+
+    wp_register_style('soundcloud-plugin', get_template_directory_uri() . '/assets/soundcloud-plugin/style.css', array(), '1.0', 'all');
+    wp_enqueue_style('soundcloud-plugin'); // Enqueue it!
+
+    wp_register_style('bootstrap', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css', array(), '1.0', 'all');
+    wp_enqueue_style('bootstrap'); // Enqueue it!
+
+    wp_register_style('bootstrap-grid', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap-grid.min.css', array(), '1.0', 'all');
+    wp_enqueue_style('bootstrap-grid'); // Enqueue it!
+
+    wp_register_style('bootstrap-reboot', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap-reboot.min.css', array(), '1.0', 'all');
+    wp_enqueue_style('bootstrap-reboot'); // Enqueue it!
+
+    wp_register_style('animatecss', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css', array(), '3.7.0', 'all');
+    wp_enqueue_style('animatecss'); // Enqueue it!
+
+    wp_register_style('dropdown', get_template_directory_uri() . '/assets/dropdown/css/style.css', array(), '1.0', 'all');
+    wp_enqueue_style('dropdown'); // Enqueue it!
+
+    wp_register_style('socicon', get_template_directory_uri() . '/assets/socicon/css/styles.css', array(), '1.0', 'all');
+    wp_enqueue_style('socicon'); // Enqueue it!
+
+    wp_register_style('theme', get_template_directory_uri() . '/assets/theme/css/style.css', array(), '1.0', 'all');
+    wp_enqueue_style('theme'); // Enqueue it!
+
+    wp_register_style('mbr-additional', get_template_directory_uri() . '/assets/mobirise/css/mbr-additional.css', array(), '1.0', 'all');
+    wp_enqueue_style('mbr-additional'); // Enqueue it!
+
+    wp_register_style('custom-style', get_template_directory_uri() . '/assets/theme/css/custom_style.css', array(), '1.0', 'all');
+    wp_enqueue_style('custom-style'); // Enqueue it!
+}
 }
 
 // Register HTML5 Blank Navigation
@@ -359,55 +446,6 @@ function max_mobirise4_comments($comment, $args, $depth)
     <?php endif; ?>
 <?php }
 
-/*------------------------------------*\
-    Actions + Filters + ShortCodes
-\*------------------------------------*/
-
-// Add Actions
-add_action('init', 'max_mobirise4_header_scripts'); // Add Custom Scripts to wp_head
-add_action('wp_print_scripts', 'max_mobirise4_conditional_scripts'); // Add Conditional Page Scripts
-add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
-add_action('wp_enqueue_scripts', 'max_mobirise4_styles'); // Add Theme Stylesheet
-add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
-add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
-add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
-
-// Remove Actions
-remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
-remove_action('wp_head', 'feed_links', 2); // Display the links to the general feeds: Post and Comment Feed
-remove_action('wp_head', 'rsd_link'); // Display the link to the Really Simple Discovery service endpoint, EditURI link
-remove_action('wp_head', 'wlwmanifest_link'); // Display the link to the Windows Live Writer manifest file.
-remove_action('wp_head', 'index_rel_link'); // Index link
-remove_action('wp_head', 'parent_post_rel_link', 10, 0); // Prev link
-remove_action('wp_head', 'start_post_rel_link', 10, 0); // Start link
-remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // Display relational links for the posts adjacent to the current post.
-remove_action('wp_head', 'wp_generator'); // Display the XHTML generator that is generated on the wp_head hook, WP version
-remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-remove_action('wp_head', 'rel_canonical');
-remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
-
-// Add Filters
-add_filter('avatar_defaults', 'max_mobirise4_gravatar'); // Custom Gravatar in Settings > Discussion
-add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
-add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
-add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
-add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
-// add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected classes (Commented out by default)
-// add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> injected ID (Commented out by default)
-// add_filter('page_css_class', 'my_css_attributes_filter', 100, 1); // Remove Navigation <li> Page ID's (Commented out by default)
-add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove invalid rel attribute
-add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
-add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
-add_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
-add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
-add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
-add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
-add_filter('post_thumbnail_html', 'remove_width_attribute', 10 ); // Remove width and height dynamic attributes to post images
-add_filter('image_send_to_editor', 'remove_width_attribute', 10 ); // Remove width and height dynamic attributes to post images
-
-// Remove Filters
-remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 
 // Shortcodes
 // add_shortcode('html5_shortcode_demo', 'html5_shortcode_demo'); // You can place [html5_shortcode_demo] in Pages, Posts now.
@@ -474,50 +512,7 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
     return '<h2>' . $content . '</h2>';
 }
 
-// CCCA: Load CCCA and Mobirise scripts (footer.php)
-function ccca_styles() {
-    if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-
-      wp_register_style('mobirise-icons', get_template_directory_uri() . '/assets/mobirise-icons/mobirise-icons.css', array(), '1.0', 'all');
-      wp_enqueue_style('mobirise-icons'); // Enqueue it!
-
-      wp_register_style('tether', 'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/css/tether.min.css', array(), '1.4.4', 'all');
-      wp_enqueue_style('tether'); // Enqueue it!
-
-      wp_register_style('soundcloud-plugin', get_template_directory_uri() . '/assets/soundcloud-plugin/style.css', array(), '1.0', 'all');
-      wp_enqueue_style('soundcloud-plugin'); // Enqueue it!
-
-      wp_register_style('bootstrap', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css', array(), '1.0', 'all');
-      wp_enqueue_style('bootstrap'); // Enqueue it!
-
-      wp_register_style('bootstrap-grid', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap-grid.min.css', array(), '1.0', 'all');
-      wp_enqueue_style('bootstrap-grid'); // Enqueue it!
-
-      wp_register_style('bootstrap-reboot', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap-reboot.min.css', array(), '1.0', 'all');
-      wp_enqueue_style('bootstrap-reboot'); // Enqueue it!
-
-      wp_register_style('animatecss', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css', array(), '3.7.0', 'all');
-      wp_enqueue_style('animatecss'); // Enqueue it!
-
-      wp_register_style('dropdown', get_template_directory_uri() . '/assets/dropdown/css/style.css', array(), '1.0', 'all');
-      wp_enqueue_style('dropdown'); // Enqueue it!
-
-      wp_register_style('socicon', get_template_directory_uri() . '/assets/socicon/css/styles.css', array(), '1.0', 'all');
-      wp_enqueue_style('socicon'); // Enqueue it!
-
-      wp_register_style('theme', get_template_directory_uri() . '/assets/theme/css/style.css', array(), '1.0', 'all');
-      wp_enqueue_style('theme'); // Enqueue it!
-
-      wp_register_style('mbr-additional', get_template_directory_uri() . '/assets/mobirise/css/mbr-additional.css', array(), '1.0', 'all');
-      wp_enqueue_style('mbr-additional'); // Enqueue it!
-
-      wp_register_style('custom-style', get_template_directory_uri() . '/assets/theme/css/custom_style.css', array(), '1.0', 'all');
-      wp_enqueue_style('custom-style'); // Enqueue it!
-  }
-}
-add_action('wp_enqueue_scripts', 'ccca_styles'); // Add Custom Scripts to wp_footer
-
-function ccca_scripts(){
+function max_mobirise4_scripts(){
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
       wp_deregister_script('jquery');
       wp_deregister_script('jquery-core');
@@ -577,7 +572,6 @@ function ccca_scripts(){
       wp_enqueue_script('theme-script'); // Enqueue it!
     }
 }
-add_action('wp_enqueue_scripts', 'ccca_scripts'); // Add Custom Scripts to wp_footer
 
 // CCCA: Load CCCA and Mobirise styled Menu
 function ccca_create_mbr_menu( $theme_location ) {
@@ -779,7 +773,6 @@ function ccca_pagination($pages = '', $range = 4)
     }
 }
 
-add_filter('auth_cookie_expiration', 'ccca_expiration_filter', 99, 3);
 function ccca_expiration_filter($seconds, $user_id, $remember){
 
     //if "remember me" is checked;
