@@ -126,7 +126,30 @@
 					</div>
 				</section>
 
-				<?php the_content(); ?>
+				<section class="features11 mbr-section content4 cid-qSShVnZyJK" id="content4-p">
+					<div class="event_loop container">
+						<div class="media-container-row py-3">
+							<div class="title col-12 col-md-8">
+								<h2 class="mbr-section-title align-center mbr-fonts-style display-2"><?php _e('Recent Events', 'max-mobirise4'); ?></h2>
+							</div>
+						</div>
+						<?php $custom_loop = new WP_Query(array( 'post_type' => 'event', 'posts_per_page' => 5, 'category_name' => 'chamber')); ?>
+						<?php while ( $custom_loop->have_posts() ) : $custom_loop->the_post(); ?>
+							<div class="event_item media-container-row pt-5 pb-3">
+								<div class="mbr-figure" style="width: 40%;">
+									<a href="<?php echo esc_url(get_permalink()); ?>"> <?php the_post_thumbnail(); ?></a>
+								</div>
+								<div class="align-left aside-content">
+									<h2 class="mbr-title mbr-fonts-style display-3"><a href="<?php echo esc_url(get_permalink()); ?>"><?php the_title(); ?></a></h2>
+									<div class="mbr-section-text">
+										<p class="mbr-text mt-3 mbr-light mbr-fonts-style display-5 fixed-height"><?php ccca_the_excerpt('ccca_excerpt'); ?></p>
+										<p class="mbr-text mbr-light mbr-fonts-style display-5 view-more">...<a href="<?php echo esc_url(get_permalink()); ?>"><?php _e('View More', 'max-mobirise4'); ?></a></p>
+									</div>
+								</div>
+							</div>
+						<?php endwhile; wp_reset_postdata(); ?>
+					 </div>
+				 </section>
 
 				<section class="mbr-section form1 cid-qSSuaa33xs" id="form1-k">
 					<div class="container">
