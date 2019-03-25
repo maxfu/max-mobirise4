@@ -99,32 +99,6 @@
 		</div>
 		<!-- input name="animation" type="hidden" -->
 
-		<!-- Modal -->
-		<?php if (is_front_page()) { ?>
-			<?php $upload_dir = wp_upload_dir(); ?>
-			<?php $fileName = $upload_dir['basedir'] . '/forex_ratios.php'; ?>
-			<?php include $fileName;?>
-
-		<div class="modal fade" id="today-headline" tabindex="-1" role="dialog" aria-labelledby="HeadlinesToday" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h2 class="mbr-section-title align-center mbr-fonts-style display-2 modal-title" id="HeadlinesToday"><?php _e('Today\'s Headline', 'max-mobirise4'); ?></h2>
-						<button type="button" class="close" data-dismiss="modal" aria-label="<?php _e('Close', 'max-mobirise4'); ?>">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<?php echo do_shortcode('[' . __('wp-rss-aggregator source="2891"', 'max-mobirise4') . ' limit="20" pagination="off" links_before=\'<ul class="mbr-text mbr-fonts-style display-7 rss-aggregator">\' link_before=\'<li class="feed-item-link">\']'); ?>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-md btn-primary display-4" data-dismiss="modal"><?php _e('Close', 'max-mobirise4'); ?></button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<?php } ?>
-
 		<div class="modal fade" id="sidebar-modal" tabindex="-1" role="dialog" aria-labelledby="sidebarModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">

@@ -240,6 +240,7 @@
     margin-bottom: 0;
     text-overflow: ellipsis;
     overflow: hidden;
+    height: 11.875rem;
   }
   .cid-qSShVnZyJK .aside-content .view-more {
     padding-top: 0;
