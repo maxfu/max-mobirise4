@@ -110,9 +110,6 @@ add_filter('image_send_to_editor', 'remove_width_attribute', 10 ); // Remove wid
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
-
-add_role( 'sydney_branch', __( 'Sydney Branch' ), array( 'read' => true, ) );
-add_role( 'melbourne_branch', __( 'Melbourne Branch' ), array( 'read' => true, ) );
 /*------------------------------------*\
     Functions
 \*------------------------------------*/
