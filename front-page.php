@@ -71,10 +71,9 @@
 				            <div class="card col-12 col-md-6 p-5 mx-3 align-center col-lg-4">
 				                <div class="card-img">
 													<div class="mbr-overlay"></div>
-				                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mbr-3-1200x800.jpg" alt="<?php _e('Event Calendar', 'max-mobirise4'); ?>" title="<?php _e('Event Calendar', 'max-mobirise4'); ?>">
+				                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mbr-3-1200x800.jpg" alt="<?php _e('Event Registration', 'max-mobirise4'); ?>" title="<?php _e('Event Registration', 'max-mobirise4'); ?>">
 				                </div>
 				                <h4 class="card-title py-2 mbr-fonts-style display-5"><?php _e('Event Registration', 'max-mobirise4'); ?></h4>
-											  <?php _e(do_shortcode('[events_list nb="-1" cat="entity" future="1" past="0" order="DESC" container_schema=\'<ul class=event-ul> %list% </ul>\' item_schema=\'<li class=event-li><a href=”%event_link%”>%event_title%</a></li>\']')); ?>
 				            </div>
 				        </div>
 				    </div>
