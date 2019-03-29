@@ -15,7 +15,7 @@
                 <?php // $output = strip_shortcodes($output); ?>
                 <?php $output = apply_filters('wptexturize', $output); ?>
                 <?php // $output = apply_filters('convert_chars', $output); ?>
-                <?php echo $output; ?>
+                <?php echo __( $output ); ?>
 
 				<?php //the_content(); ?>
 
