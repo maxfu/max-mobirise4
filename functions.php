@@ -691,7 +691,7 @@ function ccca_the_excerpt($length_callback = '', $more_callback = '')
 // Create 40 Word Callback for Custom Post Excerpts, call using html5wp_excerpt('html5wp_custom_post');
 function ccca_excerpt($length)
 {
-    return 50;
+    return 200;
 }
 
 function strip_shortcode_from_excerpt( $content ) {
