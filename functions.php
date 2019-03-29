@@ -673,6 +673,7 @@ function ccca_vcounter_get($condition)
 function ccca_the_excerpt($length_callback = '', $more_callback = '')
 {
     global $post;
+<<<<<<< HEAD
 
     if (function_exists($length_callback)) {
         add_filter('excerpt_length', $length_callback);
@@ -689,6 +690,13 @@ function ccca_the_excerpt($length_callback = '', $more_callback = '')
 //    $output = '<p>' . $output . '</p>';
 //    $output = strip_shortcodes($output); //Strips tags and images
 
+=======
+    $output = get_the_content();
+    $output = preg_replace("~(?:\[/?)[^/\]]+/?\]~s", '', $output);
+    $output = strip_shortcodes($output);
+    $output = apply_filters('wptexturize', $output);
+    $output = apply_filters('convert_chars', $output);
+>>>>>>> b2cd3d6fc2c30617d29f5cd6e1626be1ffaf61c1
     echo $output;
 }
 
