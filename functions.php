@@ -689,7 +689,7 @@ function ccca_the_excerpt($length_callback = '', $more_callback = '')
 //    $output = '<p>' . $output . '</p>';
 //    $output = strip_shortcodes($output); //Strips tags and images
 
-    echo $output;
+    echo substrwords($output,30);
 }
 
 // Create 40 Word Callback for Custom Post Excerpts, call using html5wp_excerpt('html5wp_custom_post');
