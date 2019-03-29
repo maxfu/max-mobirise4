@@ -12,9 +12,9 @@
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <?php global $post; ?>
                 <?php $output = get_the_content(); ?>
-                <?php $output = strip_shortcodes($output); ?>
-                <?php $output = apply_filters('wptexturize', $output); ?>
-                <?php $output = apply_filters('convert_chars', $output); ?>
+                <?php // $output = strip_shortcodes($output); ?>
+                <?php // $output = apply_filters('wptexturize', $output); ?>
+                <?php // $output = apply_filters('convert_chars', $output); ?>
                 <?php echo $output; ?>
 
 				<?php //the_content(); ?>
