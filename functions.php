@@ -998,7 +998,28 @@ function render_news_page( $attributes, $content = null ) {
         $attributes = array();
     }
     ob_start();
-    require( get_template_directory_uri() . 'templates/news-page.php');
+    if ( $attributes['show_title'] ) {
+        echo '<h3>' . __( 'Register', 'max-event' ) . '</h3>';
+    }
+    
+    if ( count( $attributes['errors'] ) > 0 ) {
+        foreach ( $attributes['errors'] as $error ) {
+            echo '<p>' . $error . '</p>';
+        }
+    }
+    
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    echo '<ul>';
+    $custom_loop = new WP_Query(array( 'post_type' => 'post', 'posts_per_page' => 20, 'category_name' => 'chamber' ));
+    while ( $custom_loop->have_posts() ) : $custom_loop->the_post();
+	    echo '<li><a href="' . esc_url(get_permalink()) . '">' . get_the_title() . '</a></li>';
+    endwhile;
+    if (function_exists("ccca_pagination")) {
+        ccca_pagination($custom_loop->max_num_pages);
+    }
+    wp_reset_postdata();
+    echo '</ul>';
+
     $html = ob_get_contents();
     ob_end_clean();
     return $html;
