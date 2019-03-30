@@ -682,7 +682,7 @@ function ccca_the_excerpt($length_callback = '', $more_callback = '')
     }
     $output = get_the_excerpt();
     $output = preg_replace("~(?:\[/?)[^/\]]+/?\]~s", '', $output);
-    $output = strip_shortcodes($output);
+//    $output = strip_shortcodes($output);
 //    $output = apply_filters('strip_shortcode_from_excerpt', $output);
     $output = apply_filters('wptexturize', $output);
     $output = apply_filters('convert_chars', $output);
