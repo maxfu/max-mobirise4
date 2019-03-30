@@ -998,7 +998,7 @@ function render_news_page( $attributes, $content = null ) {
         $attributes = array();
     }
     ob_start();
-    require( 'templates/' . $template_name . '.php');
+    require( get_template_directory_uri() . 'templates/news-page.php');
     $html = ob_get_contents();
     ob_end_clean();
     return $html;
