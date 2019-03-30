@@ -988,37 +988,62 @@ if (!function_exists('myStrtotime')) {
   }
 }
 
-add_shortcode( 'news-page', 'render_news_page' );
-function render_news_page( $attributes, $content = null ) {
-    // Parse shortcode attributes
-    $default_attributes = array( 'show_title' => false );
-    $attributes = shortcode_atts( $default_attributes, $attributes );
+// Add Shortcode
+function post_event_il( $atts ) {
 
-    if ( ! $attributes ) {
-        $attributes = array();
-    }
-//    if ( $attributes['show_title'] ) {
-//        $html = '<h3>' . __( 'Register', 'max-event' ) . '</h3>';
-//    }
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'branch' => 'chamber',
+		),
+		$atts,
+		'post-event-ul'
+	);
 
-//    if ( count( $attributes['errors'] ) > 0 ) {
-//        foreach ( $attributes['errors'] as $error ) {
-//             $html .= '<p>' . $error . '</p>';
-//       }
-//    }
+	// $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	// WP_Query arguments
+	$args = array(
+		'post_type'              => array( 'post', ' event' ),
+		'nopaging'               => false,
+		'posts_per_page'         => '20',
+		'tax_query'              => array(
+		'relation' => 'OR',
+			array(
+				'taxonomy'         => 'category',
+				'terms'            => $atts['branch'],
+				'field'            => 'slug',
+				'include_children' => true,
+			),
+			array(
+				'taxonomy'         => 'branch',
+				'terms'            => $atts['branch'],
+				'field'            => 'slug',
+				'include_children' => true,
+			),
+		),
+	);
 
-//    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    $html .= '<ul>';
-    $custom_loop = new WP_Query(array( 'post_type' => 'post', 'posts_per_page' => 20, 'category_name' => 'chamber' ));
-    while ( $custom_loop->have_posts() ) : $custom_loop->the_post();
-	    $html .= '<li><a href="' . esc_url(get_permalink()) . '">' . get_the_title() . '</a></li>';
-    endwhile;
-    //if (function_exists("ccca_pagination")) {
-//        ccca_pagination($custom_loop->max_num_pages);
-//    }
-    wp_reset_postdata();
-    $html .= '</ul>';
+	// The Query
+	$chapter_query = new WP_Query( $args );
 
- //   $html = ob_get_contents();
-    return $html;
+	// The Loop
+	if ( $chapter_query->have_posts() ) {
+		echo '<ul>';
+		while ( $chapter_query->have_posts() ) {
+			$chapter_query->the_post();
+			echo '<li><a href="' . esc_url(get_permalink()) . '">' . get_the_title() . '</a></li>';
+		}
+		echo '</ul>';
+	} else {
+		echo 'Exciting Content Coming Soon';
+	}
+
+	if (function_exists("ccca_pagination")) {
+		ccca_pagination($custom_loop->max_num_pages);
+	}
+
+	// Restore original Post Data
+	wp_reset_postdata();
+
 }
+add_shortcode( 'post-event-ul', 'post_event_il' );
