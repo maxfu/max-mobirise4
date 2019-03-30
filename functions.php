@@ -675,7 +675,7 @@ function ccca_the_excerpt($length_callback = '', $more_callback = '')
     global $post;
 
     ob_start();
-    the_content()
+    echo get_the_content()
     $output = ob_get_contents();
     ob_end_clean();
 
