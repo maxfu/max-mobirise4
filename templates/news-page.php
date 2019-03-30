@@ -8,7 +8,7 @@
     <?php endforeach; ?>
 <?php endif; ?>
 
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
+<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
 <ul>
 <?php $custom_loop = new WP_Query(array( 'post_type' => 'post', 'posts_per_page' => 20, 'category_name' => 'chamber' )); ?>
 <?php while ( $custom_loop->have_posts() ) : $custom_loop->the_post(); ?>
