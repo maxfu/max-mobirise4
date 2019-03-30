@@ -1,5 +1,5 @@
 <?php if ( $attributes['show_title'] ) : ?>
-    <h3><?php _e( 'Register', 'max-user' ); ?></h3>
+    <h3><?php _e( 'Register', 'max-event' ); ?></h3>
 <?php endif; ?>
 
 <?php if ( count( $attributes['errors'] ) > 0 ) : ?>
