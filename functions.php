@@ -674,18 +674,13 @@ function ccca_the_excerpt($length_callback = '', $more_callback = '')
 {
     global $post;
 
-    ob_start();
-    echo get_the_content()
-    $output = ob_get_contents();
-    ob_end_clean();
-
-//    if (function_exists($length_callback)) {
-//        add_filter('excerpt_length', $length_callback);
-//    }
+    if (function_exists($length_callback)) {
+        add_filter('excerpt_length', $length_callback);
+    }
 //    if (function_exists($more_callback)) {
 //        add_filter('excerpt_more', $more_callback);
 //    }
-//    $output = get_the_excerpt();
+    $output = get_the_excerpt();
 //    $output = preg_replace("~(?:\[/?)[^/\]]+/?\]~s", '', $output);
 //    $output = strip_shortcodes($output);
 //    $output = apply_filters('strip_shortcode_from_excerpt', $output);
