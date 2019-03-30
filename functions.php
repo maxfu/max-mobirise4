@@ -987,3 +987,19 @@ if (!function_exists('myStrtotime')) {
     );
   }
 }
+
+add_shortcode( 'news-page', 'render_news_page' );
+function render_news_page( $attributes, $content = null ) {
+    // Parse shortcode attributes
+    $default_attributes = array( 'show_title' => false );
+    $attributes = shortcode_atts( $default_attributes, $attributes );
+
+    if ( ! $attributes ) {
+        $attributes = array();
+    }
+    ob_start();
+    require( 'templates/' . $template_name . '.php');
+    $html = ob_get_contents();
+    ob_end_clean();
+    return $html;
+}
