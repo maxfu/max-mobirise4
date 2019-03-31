@@ -73,7 +73,7 @@
 													<div class="mbr-overlay"></div>
 				                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mbr-3-1200x800.jpg" alt="<?php _e('Event Registration', 'max-mobirise4'); ?>" title="<?php _e('Event Registration', 'max-mobirise4'); ?>">
 				                </div>
-				                <h4 class="card-title py-2 mbr-fonts-style display-5"><?php _e('Event Registration', 'max-mobirise4'); ?></h4>
+				                <h4 class="card-title py-2 mbr-fonts-style display-5"><a href="https://www.cccaau.org/event/" class="text-white"><?php _e('Event Registration', 'max-mobirise4'); ?></a></h4>
 				            </div>
 				        </div>
 				    </div>
