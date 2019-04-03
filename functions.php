@@ -1047,3 +1047,48 @@ function post_event_il( $atts ) {
 
 }
 add_shortcode( 'post-event-ul', 'post_event_il' );
+
+// Add Shortcode
+function register_paged_news_box_lr( $atts ) {
+
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'post_type' => 'post',
+			'category_name' => 'chamber',
+			'posts_per_page' => 5,
+            'tag_name' => 'news',
+		),
+		$atts,
+		'paged-news-box-lr'
+	);
+
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	?>
+	<?php
+	$custom_loop = new WP_Query(array( 'post_type' => $post_type, 'category_name' => $category_name, 'tag' => $tag_name, 'posts_per_page' => $posts_per_page, 'paged' => $paged ));
+	while ( $custom_loop->have_posts() ) : $custom_loop->the_post();
+	?>
+	  <div class="media-container-row pt-5 pb-3 mt-3 mb-3">
+	      <div class="mbr-figure" style="width: 40%;">
+	        <?php if ( has_post_thumbnail() ) {
+	        the_post_thumbnail();
+	        } else { ?>
+	        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mbr-1-1200x800.jpg" alt="<?php the_title(); ?>" title="">
+	        <?php } ?>
+	      </div>
+	      <div class="align-left aside-content">
+	          <h2 class="mbr-title pt-2 mbr-fonts-style display-3"><a href="<?php echo esc_url(get_permalink()); ?>"><?php the_title(); ?></a></h2>
+	          <div class="mbr-section-text">
+	              <p class="mbr-text mb-5 pt-3 mbr-light mbr-fonts-style display-5"></p>
+	          </div>
+	      </div>
+	    </div>
+	<?php
+	endwhile;
+	if (function_exists("ccca_pagination")) { ccca_pagination($custom_loop->max_num_pages); }
+	wp_reset_postdata();
+
+
+}
+add_shortcode( 'paged-news-box-lr', 'register_paged_news_box_lr' );
