@@ -155,7 +155,7 @@
 								<h2 class="mbr-section-title align-center mbr-fonts-style display-2"><?php _e('Recent Events', 'max-mobirise4'); ?></h2>
 							</div>
 						</div>
-						<?php $custom_loop = new WP_Query(array( 'post_type' => 'event_moment', 'posts_per_page' => 5, 'branch' => 'frontpageitem', 'orderby' => 'date', 'order' => 'DESC')); ?>
+						<?php $custom_loop = new WP_Query(array( 'post_type' => 'event_moment', 'posts_per_page' => 5, 'branch' => 'frontpageevent', 'orderby' => 'date', 'order' => 'DESC')); ?>
 						<?php while ( $custom_loop->have_posts() ) : $custom_loop->the_post(); ?>
 							<div class="event_item media-container-row pt-5 pb-3">
 								<div class="mbr-figure" style="width: 40%;">
