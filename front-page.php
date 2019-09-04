@@ -106,7 +106,7 @@
 					<div class="container">
 						<h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2"><?php _e('Chamber News', 'max-mobirise4'); ?></h2>
 						<div class="media-container-row pt-5 ">
-							<?php $custom_loop = new WP_Query(array( 'post_type' => 'post', 'posts_per_page' => 3, 'category_name' => 'frontpage')); ?>
+							<?php $custom_loop = new WP_Query(array( 'post_type' => 'post', 'posts_per_page' => 3, 'category_name' => 'frontpagenews')); ?>
 							<?php while ( $custom_loop->have_posts() ) : $custom_loop->the_post(); ?>
 								<div class="card px-3 col-12 col-md-6 col-lg-4">
 									<div class="card-wrapper ">
