@@ -922,7 +922,7 @@ function daily_fetcher( ) {
   if ( has_post_thumbnail() ) {
   the_post_thumbnail('full', array('class' => 'img-responsive clients-img'));
   } else {
-  echo '          <img src="'; echo get_template_directory_uri(); echo '/assets/images/topbg-1-66x69.png" class="img-responsive clients-img">'; echo "\r\n";
+  echo '          <a href="'; the_content(); echo '"><img src="'; echo get_template_directory_uri(); echo '/assets/images/topbg-1-66x69.png" class="img-responsive clients-img">'; echo '</a>'; echo "\r\n";
   }
   echo '        </div>'; echo "\r\n";
   echo '      </div>'; echo "\r\n";
