@@ -920,9 +920,9 @@ function daily_fetcher( ) {
   echo '      <div class="col-md-12">'; echo "\r\n";
   echo '        <div class="wrap-img ">'; echo "\r\n";
   if ( has_post_thumbnail() ) {
-  echo '          <a href="'; the_content(); echo '">'; the_post_thumbnail('full', array('class' => 'img-responsive clients-img')); echo '</a>';
+  echo '          <a href="'; the_excerpt(); echo '">'; the_post_thumbnail('full', array('class' => 'img-responsive clients-img')); echo '</a>';
   } else {
-  echo '          <a href="'; the_content(); echo '"><img src="'; echo get_template_directory_uri(); echo '/assets/images/topbg-1-66x69.png" class="img-responsive clients-img">'; echo '</a>'; echo "\r\n";
+  echo '          <a href="'; the_excerpt(); echo '"><img src="'; echo get_template_directory_uri(); echo '/assets/images/topbg-1-66x69.png" class="img-responsive clients-img">'; echo '</a>'; echo "\r\n";
   }
   echo '        </div>'; echo "\r\n";
   echo '      </div>'; echo "\r\n";
