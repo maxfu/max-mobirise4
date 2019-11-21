@@ -35,13 +35,13 @@
 						</div>
 						<div class="col-12 col-md-3 mbr-fonts-style display-7">
 							<h5 class="pb-3"><?php _e('Address', 'max-mobirise4'); ?></h5>
-							<p class="mbr-text">Level 3, 39-41 York Street, Sydney NSW 2000 Australia</p>
+							<p class="mbr-text">Suite 1506, 99 Bathurst Street, Sydney NSW 2000 Australia</p>
 						</div>
 						<div class="col-12 col-md-3 mbr-fonts-style display-7">
 							<h5 class="pb-3"><?php _e('Contact', 'max-mobirise4'); ?></h5>
 							<p class="mbr-text">
-								<?php _e('Email: ', 'max-mobirise4'); ?>info@cccaau.org<br>
-								<?php _e('Phone: ', 'max-mobirise4'); ?>(02) 8235 5925;<br>(02) 8299 8010
+								<?php _e('Email: ', 'max-mobirise4'); ?>sgccca@cccaau.org<br>
+								<?php _e('Phone: ', 'max-mobirise4'); ?>(02) 9261 1197
 							</p>
 						</div>
 						<div class="col-12 col-md-3 mbr-fonts-style display-7">
